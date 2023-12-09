@@ -25,7 +25,7 @@ public class Bill extends AppCompatActivity {
         items.add(new BillItems("John", "John@email.com", R.drawable.plus));
         items.add(new BillItems("John", "John@email.com", R.drawable.plus));
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(new MyAdapter(this, items));
+        recyclerView.setAdapter(new BillAdapter(this, items));
 
 
 

@@ -8,11 +8,11 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
-public class MyViewHolder extends RecyclerView.ViewHolder{
+public class BillViewHolder extends RecyclerView.ViewHolder{
     ImageView imageView;
     TextView name, email;
 
-    public MyViewHolder(@NonNull View itemView) {
+    public BillViewHolder(@NonNull View itemView) {
         super(itemView);
         imageView = itemView.findViewById(R.id.userImageView);
         name = itemView.findViewById(R.id.userNameTextView);
