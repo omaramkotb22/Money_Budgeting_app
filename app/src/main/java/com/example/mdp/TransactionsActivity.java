@@ -30,8 +30,6 @@ public class TransactionsActivity extends AppCompatActivity {
 
         // Initialize the adapter and attach it to the RecyclerView
         adapter = new TransactionAdapter(transactionList);
-        transactionList.add(new Transaction("Halab", 100, "12/12/2020"));
-        transactionList.add(new Transaction("Socar", 200, "12/12/2020"));
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
 

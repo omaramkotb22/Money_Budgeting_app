@@ -7,4 +7,10 @@
     <string name="bills">Bills</string>
     <string name="settings">Settings</string>
     <string name="bill_title">Dinner with the boys</string>
+    <string-array name="expense_items">
+        <item>Food and Restaurants  </item>
+        <item>Transportation </item>
+        <item>Bills &amp; Utilities</item>
+    </string-array>
+
 </resources>

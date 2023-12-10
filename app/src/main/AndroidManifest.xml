@@ -15,6 +15,9 @@
         android:theme="@style/Theme.MDP"
         tools:targetApi="31">
         <activity
+            android:name=".AddTransactionActivity"
+            android:exported="false" />
+        <activity
             android:name=".TransactionsActivity"
             android:exported="false" />
         <activity

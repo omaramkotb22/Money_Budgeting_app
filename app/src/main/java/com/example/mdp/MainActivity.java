@@ -10,13 +10,14 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     CardView transactionsCardView;
-
+    CardView addTransactionCardView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         transactionsCardView = findViewById(R.id.transactions_cardView);
+        addTransactionCardView = findViewById(R.id.add_transaction_card);
         transactionsCardView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -24,9 +25,21 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(intent);
                     }
                 });
+        addTransactionCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, AddTransactionActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+
 
 
     }
+
+
 
     public void onCLick(View view){
         Intent intent = new Intent(MainActivity.this, Bill.class);
