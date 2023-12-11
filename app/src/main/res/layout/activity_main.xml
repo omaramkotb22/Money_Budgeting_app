@@ -236,7 +236,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/nav_item_3"
+            android:id="@+id/bills_nav"
             android:layout_width="60dp"
             android:layout_height="match_parent"
             android:layout_alignParentEnd="true"
@@ -293,7 +293,6 @@
         </LinearLayout>
 
 
-        <!-- Navigation item 4 -->
 
 
     </RelativeLayout>

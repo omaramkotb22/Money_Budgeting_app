@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Top navigation bar -->
+    <LinearLayout
+        android:id="@+id/bills_nav_linear_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:weightSum="3">
+
+        <TextView
+            android:id="@+id/text_what_people_owe_me"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="What People Owe Me"
+            android:gravity="center"
+            android:padding="8dp"
+            android:textStyle="bold"
+            android:textSize="11dp"
+            />
+
+        <TextView
+            android:id="@+id/text_what_i_owe"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="What I Owe"
+            android:gravity="center"
+            android:padding="8dp"/>
+
+        <TextView
+            android:id="@+id/text_bills"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Bills"
+            android:gravity="center"
+            android:padding="8dp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <!-- RecyclerView for the list items -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_bills"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_tab_bar"
+        android:layout_below="@id/bills_nav_linear_layout"
+        android:padding="8dp" />
+
+    <!-- Bottom tab bar -->
+    <RelativeLayout
+        android:id="@+id/bottom_tab_bar"
+        android:layout_width="412dp"
+        android:layout_height="82dp"
+        android:layout_alignParentBottom="true"
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <!-- Navigation item 1 -->
+        <LinearLayout
+            android:id="@+id/nav_item_1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="36dp"
+            android:layout_marginEnd="316dp"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:onClick="onCLick"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/overview_tabbar_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/overview"
+                android:src="@drawable/overviewfalse" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:text="@string/overview" />
+
+        </LinearLayout>
+
+        <!-- Navigation item 2 -->
+
+        <LinearLayout
+            android:id="@+id/nav_item_2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="194dp"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:onClick="onCLick"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/thismonth_tabbar_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/thismonth"
+                android:src="@drawable/thismonthfalse" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:text="@string/thismonth" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/bills_nav"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="104dp"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:onClick="onCLick"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/bills_tabbar_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/bills"
+                android:src="@drawable/billstrue" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center"
+                android:text="@string/bills" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/nav_item_4"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="12dp"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:onClick="onCLick"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/settings_tabbar_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/settings"
+                android:src="@drawable/settingsfalse" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:text="@string/settings" />
+
+        </LinearLayout>
+
+
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

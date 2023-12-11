@@ -12,12 +12,14 @@ public class TransactionViewHolder extends RecyclerView.ViewHolder {
     public TextView transactionAmount;
     public TextView transactionDate;
     public View layout;
+    public TextView transactionCategory;
 
     public TransactionViewHolder(View itemView) {
         super(itemView);
         icon = itemView.findViewById(R.id.TransactionIcon); // Corrected the ID
         transactionName = itemView.findViewById(R.id.tvTransactionName);
         transactionAmount = itemView.findViewById(R.id.tvTransactionAmount);
+        transactionCategory = itemView.findViewById(R.id.tvTransactionCategory);
         transactionDate = itemView.findViewById(R.id.tvTransactionDate);
         layout = itemView.findViewById(R.id.llTransactionItem); // The layout for the click listener
     }

@@ -36,6 +36,14 @@
             android:layout_height="wrap_content"
             android:text="Amount"
             android:layout_marginStart="16dp" />
+
+        <TextView
+            android:id="@+id/tvTransactionCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Category"
+            android:layout_marginStart="16dp" />
+
     </LinearLayout>
 
     <!-- Expandable Layout for Transaction Date -->
@@ -45,4 +53,5 @@
         android:layout_height="wrap_content"
         android:visibility="gone"
         android:text="Transaction Date" />
+
 </LinearLayout>

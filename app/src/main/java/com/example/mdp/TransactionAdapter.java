@@ -27,7 +27,15 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionViewHold
         Transaction transaction = transactions.get(position);
         holder.transactionName.setText(transaction.getName());
         holder.transactionAmount.setText(String.valueOf(transaction.getAmount()));
-        holder.transactionDate.setText(transaction.getDate());
+
+        // Check if dateTime is not null
+        if (transaction.getDateTime() != null) {
+            holder.transactionDate.setText(transaction.getDateTime().toDate().toString());
+        } else {
+            holder.transactionDate.setText(""); // Or set to some default text
+        }
+
+        holder.transactionCategory.setText(transaction.getCategory()); // Make sure this is the correct ID
         holder.transactionDate.setVisibility(transaction.isExpanded() ? View.VISIBLE : View.GONE);
 
         holder.layout.setOnClickListener(view -> {
@@ -36,6 +44,7 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionViewHold
             notifyItemChanged(position);
         });
     }
+
 
     @Override
     public int getItemCount() {

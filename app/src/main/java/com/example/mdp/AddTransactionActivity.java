@@ -12,11 +12,13 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.Timestamp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.type.DateTime;
+
 
 import java.util.HashMap;
 import java.util.Map;
@@ -49,16 +51,15 @@ public class AddTransactionActivity extends AppCompatActivity {
                 String transactionTitle = transactionTitleInput.getText().toString();
                 String expenseCategory = expenseSpinner.getSelectedItem().toString();
                 double amount = Double.parseDouble(amountInput.getText().toString());
-                FirebaseUser currentUser = mAuth.getCurrentUser();
-
+                String userId = mAuth.getCurrentUser().getUid();
+                DocumentReference userRef = FirebaseFirestore.getInstance().collection("users").document(userId);
                 // Create a new transaction object
                 Map<String, Object> transaction = new HashMap<>();
                 transaction.put("amount", amount);
                 transaction.put("name", transactionTitle);
                 transaction.put("category", expenseCategory);
-                transaction.put("date", FieldValue.serverTimestamp());
-                assert currentUser != null;
-                transaction.put("user", currentUser.getUid());
+                transaction.put("date", Timestamp.now());
+                transaction.put("user", userRef);
                 db.collection("Transactions")
                         .add(transaction)
                         .addOnSuccessListener(new OnSuccessListener() {

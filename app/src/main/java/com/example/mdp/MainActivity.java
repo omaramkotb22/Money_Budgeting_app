@@ -6,11 +6,14 @@ import androidx.cardview.widget.CardView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     CardView transactionsCardView;
     CardView addTransactionCardView;
+
+    LinearLayout billsNav;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
         transactionsCardView = findViewById(R.id.transactions_cardView);
         addTransactionCardView = findViewById(R.id.add_transaction_card);
+        billsNav = findViewById(R.id.bills_nav);
         transactionsCardView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -32,7 +36,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
+        billsNav.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, BillsActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
 
@@ -41,9 +51,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    public void onCLick(View view){
-        Intent intent = new Intent(MainActivity.this, Bill.class);
-        startActivity(intent);
-    }
+
 
 }
