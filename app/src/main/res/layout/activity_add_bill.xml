@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- Input for the title of the bill -->
+    <EditText
+        android:id="@+id/editText_bill_title"
+        android:layout_width="379dp"
+        android:layout_height="73dp"
+        android:layout_alignParentTop="true"
+        android:hint="Title of the bill"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/editText_total_bill"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editText_bill_title"
+        android:hint="Total Bill"
+        android:inputType="numberDecimal" />
+
+    <LinearLayout
+        android:id="@+id/container_tagged_users"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editText_total_bill"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical">
+        <include layout="@layout/item_user_amount" />
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/button_add_bill"
+        android:layout_width="254dp"
+        android:layout_height="70dp"
+        android:layout_below="@id/container_tagged_users"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="123dp"
+        android:layout_marginTop="165dp"
+        android:layout_marginEnd="114dp"
+        android:text="Add Bill" />
+
+
+</RelativeLayout>

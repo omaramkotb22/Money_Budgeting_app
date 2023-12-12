@@ -6,6 +6,7 @@
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:id="@+id/userImageView"
+        android:src="@drawable/user"
         />
     <TextView
         android:layout_width="match_parent"

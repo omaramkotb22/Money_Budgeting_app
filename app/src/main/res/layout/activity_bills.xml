@@ -1,50 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <!-- Top navigation bar -->
-    <LinearLayout
-        android:id="@+id/bills_nav_linear_layout"
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/add_bill_card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#FFFFFF"
-        android:orientation="horizontal"
-        android:padding="8dp"
-        android:weightSum="3">
+        android:layout_margin="8dp"
+        app:cardBackgroundColor="@color/primary"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:cardCornerRadius="21dp"
+        >
 
-        <TextView
-            android:id="@+id/text_what_people_owe_me"
-            android:layout_width="0dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="What People Owe Me"
-            android:gravity="center"
-            android:padding="8dp"
-            android:textStyle="bold"
-            android:textSize="11dp"
-            />
+            android:orientation="vertical"
+            android:padding="16dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add Bill"
+                android:textSize="24dp"
+                android:textColor="#ffffff" />
 
-        <TextView
-            android:id="@+id/text_what_i_owe"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="What I Owe"
-            android:gravity="center"
-            android:padding="8dp"/>
+            <!-- Date -->
 
-        <TextView
-            android:id="@+id/text_bills"
-            android:layout_width="0dp"
+
+        </LinearLayout>
+
+        <!-- Plus sign on the right -->
+        <ImageView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Bills"
-            android:gravity="center"
-            android:padding="8dp"
-            android:textStyle="bold"/>
-    </LinearLayout>
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/plus" />
+    </androidx.cardview.widget.CardView>
+
 
     <!-- RecyclerView for the list items -->
     <androidx.recyclerview.widget.RecyclerView
@@ -52,7 +52,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/bottom_tab_bar"
-        android:layout_below="@id/bills_nav_linear_layout"
+        android:layout_below="@+id/add_bill_card"
         android:padding="8dp" />
 
     <!-- Bottom tab bar -->

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="8dp">
+
+    <!-- Input for the name of the tagged user -->
+    <EditText
+        android:id="@+id/editText_user_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:hint="User"/>
+
+    <!-- Input for the amount for the user -->
+    <EditText
+        android:id="@+id/editText_amount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:hint="Amount"
+        android:inputType="numberDecimal"/>
+
+    <!-- Button to add more inputs -->
+    <ImageView
+        android:id="@+id/imageView_add_more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/plus"
+        android:onClick="onAddField"
+        />
+
+
+</LinearLayout>
