@@ -6,23 +6,57 @@
 
     <TextView
         android:id="@+id/Register"
-        android:layout_width="150dp"
-        android:layout_height="120dp"
+        android:layout_width="162dp"
+        android:layout_height="67dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="131dp"
-        android:layout_marginEnd="130dp"
+        android:layout_marginEnd="118dp"
         android:gravity="bottom|center"
         android:text="Register"
         android:textSize="30dp"
         android:textStyle="bold" />
 
+    <!-- Register TextView and other components -->
+
+    <LinearLayout
+        android:id="@+id/first_last_name"
+        android:layout_width="match_parent"
+        android:layout_height="112dp"
+        android:layout_below="@id/Register"
+        android:layout_marginTop="17dp"
+        android:orientation="horizontal"
+        android:weightSum="2"> <!-- Total weight sum equals the number of children -->
+
+        <EditText
+            android:id="@+id/username_editText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_weight="1"
+            android:hint="Username"
+            android:inputType="textPersonName"
+            android:padding="12dp" />
+
+        <EditText
+            android:id="@+id/monthly_budget"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_weight="1"
+            android:hint="Monthly Budget"
+            android:inputType="numberDecimal"
+            android:padding="12dp" />
+    </LinearLayout>
+
+
+
     <EditText
         android:id="@+id/emailEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/Register"
-        android:layout_marginTop="58dp"
+        android:layout_below="@id/first_last_name"
+        android:layout_marginTop="50dp"
         android:hint="Email"
         android:inputType="textEmailAddress"
         android:padding="12dp" />
@@ -32,26 +66,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/emailEditText"
-        android:layout_marginTop="54dp"
+        android:layout_marginTop="50dp"
         android:hint="Password"
         android:inputType="textPassword"
         android:padding="12dp" />
 
 
-    <TextView
-        android:id="@+id/go_to_login"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/passwordEditText"
-        android:layout_marginTop="53dp"
-        android:text="Continue to Login" />
+
 
     <Button
         android:id="@+id/registerButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/go_to_login"
-        android:layout_marginTop="129dp"
+        android:layout_below="@id/passwordEditText"
+        android:layout_marginTop="50dp"
         android:text="Register" />
 
 </RelativeLayout>

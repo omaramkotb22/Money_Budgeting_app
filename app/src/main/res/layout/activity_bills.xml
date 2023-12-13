@@ -102,7 +102,7 @@
         <!-- Navigation item 2 -->
 
         <LinearLayout
-            android:id="@+id/nav_item_2"
+            android:id="@+id/this_month_nav"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_alignParentEnd="true"

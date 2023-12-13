@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ThisMonthActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- TitleLayout -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Expenses"
+                android:layout_gravity="center_horizontal"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <!-- Amount spent -->
+            <TextView
+                android:id="@+id/amountSpent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="MYR 1,035"
+                android:textSize="18sp" />
+
+            <!-- Date -->
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text=""
+                android:textSize="14sp" />
+
+            <!-- Breakdown Layout -->
+            <LinearLayout
+                android:id="@+id/food_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="16dp">
+
+                <!-- Food and Restaurants Layout -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+
+                    <!-- Icon for Food and Restaurants -->
+                    <!-- Add ImageView here if needed -->
+                    <LinearLayout
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        >
+                        <ImageView
+                            android:layout_width="128px"
+                            android:layout_height="128px"
+                            android:src="@drawable/food"
+
+                            />
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Food and Restaurants"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/total_food_amount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/food_recycler_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:maxHeight="200dp"
+                        android:nestedScrollingEnabled="true"
+                        />
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/bills_and_utilities_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="16dp">
+
+                <!-- Food and Restaurants Layout -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+
+                    <!-- Icon for Food and Restaurants -->
+                    <!-- Add ImageView here if needed -->
+                    <LinearLayout
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        >
+                        <ImageView
+                            android:layout_width="128px"
+                            android:layout_height="128px"
+                            android:src="@drawable/billsandutilities"
+                            />
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Bills and Utilities"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/total_bills_and_utilities_amount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/bills_and_utilities_recycler_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:maxHeight="200dp"
+                        android:nestedScrollingEnabled="true"
+                        />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+
+
+            <LinearLayout
+                android:id="@+id/transportation_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+
+                    <LinearLayout
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent">
+                        <ImageView
+                            android:layout_width="128px"
+                            android:layout_height="128px"
+                            android:src="@drawable/transportation_icon"
+                        />
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Transportation"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/total_transportation_amount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/transportation_recycler_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:maxHeight="200dp"
+                        android:nestedScrollingEnabled="true"
+                        />
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+
+
+
+    </ScrollView>
+
+    <RelativeLayout
+        android:layout_width="412dp"
+        android:layout_height="82dp"
+        android:layout_alignParentBottom="true"
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <!-- Navigation item 1 -->
+        <LinearLayout
+            android:id="@+id/nav_item_1"
+            android:layout_width="76dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="36dp"
+            android:layout_marginEnd="299dp"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/overview_tabbar_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/overview"
+                android:src="@drawable/overviewfalse" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/overview" />
+
+        </LinearLayout>
+
+        <!-- Navigation item 2 -->
+
+        <LinearLayout
+            android:id="@+id/this_month_nav"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="194dp"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:onClick="onCLick"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/thismonth_tabbar_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/thismonth"
+                android:src="@drawable/thismonthtrue" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:gravity="center"
+                android:text="@string/thismonth" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/bills_nav"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="104dp"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:onClick="onCLick"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/bills_tabbar_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/bills"
+                android:src="@drawable/billsfalse" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center"
+                android:text="@string/bills" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/nav_item_4"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="12dp"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:onClick="onCLick"
+            android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/settings_tabbar_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/settings"
+            android:src="@drawable/settingsfalse" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:text="@string/settings" />
+        </LinearLayout>
+
+
+</RelativeLayout>
+</RelativeLayout>

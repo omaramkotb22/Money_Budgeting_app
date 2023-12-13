@@ -30,8 +30,12 @@ public class RegisterActivity extends AppCompatActivity {
     EditText emailEditText, passwordEditText;
 
     Button registerButton;
+
+    EditText monthlyBudget;
     private FirebaseAuth mAuth;
     TextView loginTextView;
+
+    EditText usernameEditText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,14 +45,9 @@ public class RegisterActivity extends AppCompatActivity {
         emailEditText = findViewById(R.id.emailEditText);
         passwordEditText = findViewById(R.id.passwordEditText);
         registerButton = findViewById(R.id.registerButton);
-        loginTextView = findViewById(R.id.go_to_login);
-        loginTextView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
-                startActivity(intent);
-            }
-        });
+        monthlyBudget = findViewById(R.id.monthly_budget);
+        usernameEditText = findViewById(R.id.username_editText);
+
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -75,6 +74,10 @@ public class RegisterActivity extends AppCompatActivity {
                                     if(user != null){
                                         Map<String, Object> userData = new HashMap<>();
                                         userData.put("email", user.getEmail());
+                                        userData.put("uid", user.getUid());
+                                        userData.put("monthly_budget", monthlyBudget.getText().toString());
+                                        userData.put("remainder", monthlyBudget.getText().toString());
+                                        userData.put("username", usernameEditText.getText().toString());
                                         db.collection("users").document(user.getUid()).set(userData);
                                     }
                                     Toast.makeText(RegisterActivity.this, "Account Created", Toast.LENGTH_SHORT).show();
@@ -88,6 +91,8 @@ public class RegisterActivity extends AppCompatActivity {
                             }
                         });
 
+                Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                startActivity(intent);
             }
         });
     }

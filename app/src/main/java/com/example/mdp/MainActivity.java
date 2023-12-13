@@ -13,6 +13,8 @@ public class MainActivity extends AppCompatActivity {
     CardView transactionsCardView;
     CardView addTransactionCardView;
 
+    LinearLayout thisMonthNav;
+
     LinearLayout billsNav;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
         transactionsCardView = findViewById(R.id.transactions_cardView);
         addTransactionCardView = findViewById(R.id.add_transaction_card);
+        thisMonthNav = findViewById(R.id.this_month_nav);
         billsNav = findViewById(R.id.bills_nav);
         transactionsCardView.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -33,6 +36,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, AddTransactionActivity.class);
+                startActivity(intent);
+            }
+        });
+        thisMonthNav.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, ThisMonthActivity.class);
                 startActivity(intent);
             }
         });
