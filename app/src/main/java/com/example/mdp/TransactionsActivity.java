@@ -41,7 +41,7 @@ public class TransactionsActivity extends AppCompatActivity {
     }
     private void fetchTransactions(String userId) {
         db.collection("Transactions")
-                .whereEqualTo("user", db.document("users/" + userId))
+                .whereEqualTo("user", userId)
                 .get()
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {

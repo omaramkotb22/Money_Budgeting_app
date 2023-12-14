@@ -8,13 +8,13 @@ public class Transaction {
     private double amount;
     private String category;
     private Timestamp dateTime;
-    private DocumentReference user;
+    private String user;
     private boolean isExpanded;
 
     public Transaction() {
     }
 
-    public Transaction(String name, double amount, String category, Timestamp dateTime, DocumentReference user) {
+    public Transaction(String name, double amount, String category, Timestamp dateTime, String user) {
         this.name = name;
         this.amount = amount;
         this.category = category;
@@ -32,11 +32,11 @@ public class Transaction {
         this.dateTime = dateTime;
     }
 
-    public DocumentReference getUser() {
+    public String getUser() {
         return user;
     }
 
-    public void setUser(DocumentReference user) {
+    public void setUser(String user) {
         this.user = user;
     }
 
