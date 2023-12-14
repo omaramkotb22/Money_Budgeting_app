@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     LinearLayout thisMonthNav;
 
     LinearLayout billsNav;
+    LinearLayout settingsNav;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,6 +54,17 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        settingsNav = findViewById(R.id.nav_item_4);
+        settingsNav.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
 
 
 

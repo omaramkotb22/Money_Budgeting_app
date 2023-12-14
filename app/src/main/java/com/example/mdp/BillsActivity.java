@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.LinearLayout;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -25,6 +26,13 @@ public class BillsActivity extends AppCompatActivity {
     List<BillsItems> billsItemsList;
     FirebaseFirestore db;
 
+    LinearLayout mainActivity;
+
+    LinearLayout thisMonthActivity;
+
+    LinearLayout billsActivity;
+
+    LinearLayout settingsActivity;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +51,34 @@ public class BillsActivity extends AppCompatActivity {
             Intent intent = new Intent(BillsActivity.this, AddBillActivity.class);
             startActivity(intent);
         });
+
+        mainActivity = findViewById(R.id.nav_item_1);
+        mainActivity.setOnClickListener(view -> {
+            Intent intent = new Intent(BillsActivity.this, MainActivity.class);
+            startActivity(intent);
+        });
+
+        thisMonthActivity = findViewById(R.id.this_month_nav);
+        thisMonthActivity.setOnClickListener(view -> {
+            Intent intent = new Intent(BillsActivity.this, ThisMonthActivity.class);
+            startActivity(intent);
+        });
+
+        billsActivity = findViewById(R.id.bills_nav);
+        billsActivity.setOnClickListener(view -> {
+            Intent intent = new Intent(BillsActivity.this, BillsActivity.class);
+            startActivity(intent);
+        });
+
+        settingsActivity = findViewById(R.id.nav_item_4);
+        settingsActivity.setOnClickListener(view -> {
+            Intent intent = new Intent(BillsActivity.this, SettingsActivity.class);
+            startActivity(intent);
+        });
+
+
+
+
 
 
     }
